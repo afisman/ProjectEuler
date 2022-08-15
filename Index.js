@@ -10,3 +10,29 @@ for (let i = 0; i < 1000; i++) {
 console.log(sum)
 
 //Exercise 2
+
+
+function evenFibSum(limit) {
+    if (limit < 2)
+        return 0;
+
+
+    let evenFib1 = 0, evenFib2 = 2;
+    let sum = evenFib1 + evenFib2;
+
+    while (evenFib2 <= limit) {
+        let evenFib3 = 4 * evenFib2 + evenFib1;
+
+        if (evenFib3 > limit)
+            break;
+
+        evenFib1 = evenFib2;
+        evenFib2 = evenFib3;
+        sum += evenFib2;
+    }
+
+    return sum;
+}
+
+let limit = 4000000;
+document.write(evenFibSum(limit));
