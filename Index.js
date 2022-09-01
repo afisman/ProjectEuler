@@ -1,4 +1,4 @@
-//Exercise 1
+//Exercise 1 Multiples of 3 or 5
 
 let sum = 0
 
@@ -9,7 +9,7 @@ for (let i = 0; i < 1000; i++) {
 }
 console.log(sum)
 
-//Exercise 2
+//Exercise 2 Even Fibonacci numbers
 
 
 function evenFibSum(limit) {
@@ -36,7 +36,7 @@ function evenFibSum(limit) {
 
 let limit = 4000000;
 
-//Exercise 3
+//Exercise 3 Largest prime factor
 
 var divisor = 2;
 var number = 600851475143;
@@ -48,3 +48,26 @@ while (number > 1) {
     }
 }
 console.log(divisor);
+
+//Exercise 4 highest palindrome of 3 digit product
+let convertedNumber = n.toString()
+let reverseString = convertedNumber.split('').reverse().join('')
+return reverseString === convertedNumber ? true : false
+}
+
+while (num1 < 1000) {
+    for (let i = num2; i < 1000; i++) {
+        let prod = num1 * i
+        if (checkPalindrome(prod)) {
+            palindromes.push(prod)
+            nums.push([num1, i])
+        }
+    }
+
+    num1++
+
+}
+
+let palindromes2 = palindromes.sort(function (a, b) { return a - b; })
+console.log(palindromes2[palindromes2.length - 1])
+console.log(nums[nums.length - 1])
