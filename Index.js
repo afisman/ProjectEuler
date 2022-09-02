@@ -118,3 +118,24 @@ const finalResult = n => {
 }
 
 console.log(finalResult(100))
+
+
+//Exercise 7 10001st prime
+
+let arrOfPrimes = []
+
+const isPrimeNumber = n => {
+    for (var i = 2; i < n; i++) {
+        if (n % i === 0) return false;
+    }
+    return n > 1;
+}
+
+const getPrimes = () => {
+    for (let i = 2; arrOfPrimes.length < 10001; i++) {
+        isPrimeNumber(i) && arrOfPrimes.push(i)
+    }
+    return arrOfPrimes[arrOfPrimes.length - 1]
+}
+
+console.log(getPrimes())
