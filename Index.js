@@ -91,3 +91,30 @@ function lcm(n) {
 
 
 console.log(lcm(20))
+
+
+
+//Exercise 6 Sum square difference
+
+const sumOfSquares = n => {
+    let result = 0
+    for (let i = 1; i <= n; i++) {
+        result += i ** 2
+    }
+    return result
+}
+
+const squareOfSums = n => {
+    let result2 = 0
+    for (let i = 1; i <= n; i++) {
+        result2 += i
+    }
+    let resultSquared = result2 ** 2
+    return resultSquared
+}
+
+const finalResult = n => {
+    return squareOfSums(n) - sumOfSquares(n)
+}
+
+console.log(finalResult(100))
