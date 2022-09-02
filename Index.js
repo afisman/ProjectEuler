@@ -71,3 +71,23 @@ while (num1 < 1000) {
 let palindromes2 = palindromes.sort(function (a, b) { return a - b; })
 console.log(palindromes2[palindromes2.length - 1])
 console.log(nums[nums.length - 1])
+
+
+//Exercise 5, get lowest number divisible by 1-20
+
+function gcd(a, b) {
+    if (a % b != 0)
+        return gcd(b, a % b);
+    else
+        return b;
+}
+
+function lcm(n) {
+    let ans = 1;
+    for (let i = 1; i <= n; i++)
+        ans = (ans * i) / (gcd(ans, i));
+    return ans;
+}
+
+
+console.log(lcm(20))
