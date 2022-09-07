@@ -142,8 +142,25 @@ const getPrimes = () => {
 
 console.log(getPrimes())
 
+//Exercise 9 find pythagorean triples which add to 1000
 
-//Exercise 10
+let a;
+let c;
+
+for (var b = 1; b < 1000; b += 1) {
+    a = (500000 - 1000 * b) / (1000 - b);
+
+    if (Math.floor(a) === a) {
+        c = 1000 - a - b;
+
+        break;
+    }
+}
+
+console.log(a * b * c);
+
+
+//Exercise 10 sum of primes under 2000000
 
 const isPrime = num => {
     for (let i = 2, s = Math.sqrt(num); i <= s; i++)
