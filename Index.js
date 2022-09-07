@@ -168,22 +168,20 @@ const isPrime = num => {
     return num > 1;
 }
 
-const getPrimeProduct = () => {
+const getPrimeSum = () => {
     let arrOfPrimes2 = []
+    let acc = 0
 
     for (let n = 2; n < 2000000; n++) {
 
-        if (isPrime(n) == true) arrOfPrimes2.push(n)
+        if (isPrime(n) == true) acc += n
     }
 
-    console.log(arrOfPrimes2)
-    const Sum = arrOfPrimes2.reduce((acc, eachNumber) => {
-        return acc + eachNumber
-    }, 0)
+    console.log(acc)
 
-    return Sum
+    return acc
 }
 
-console.log(getPrimeProduct())
+console.log(getPrimeSum())
 
 
