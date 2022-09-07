@@ -50,10 +50,12 @@ while (number > 1) {
 console.log(divisor);
 
 //Exercise 4 highest palindrome of 3 digit product
+
+
 let convertedNumber = n.toString()
 let reverseString = convertedNumber.split('').reverse().join('')
 return reverseString === convertedNumber ? true : false
-}
+
 
 while (num1 < 1000) {
     for (let i = num2; i < 1000; i++) {
@@ -125,7 +127,7 @@ console.log(finalResult(100))
 let arrOfPrimes = []
 
 const isPrimeNumber = n => {
-    for (var i = 2; i < n; i++) {
+    for (let i = 2; i < n; i++) {
         if (n % i === 0) return false;
     }
     return n > 1;
@@ -139,3 +141,32 @@ const getPrimes = () => {
 }
 
 console.log(getPrimes())
+
+
+//Exercise 10
+
+const isPrime = num => {
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if (num % i === 0) return false;
+    return num > 1;
+}
+
+const getPrimeProduct = () => {
+    let arrOfPrimes2 = []
+
+    for (let n = 2; n < 2000000; n++) {
+
+        if (isPrime(n) == true) arrOfPrimes2.push(n)
+    }
+
+    console.log(arrOfPrimes2)
+    const Sum = arrOfPrimes2.reduce((acc, eachNumber) => {
+        return acc + eachNumber
+    }, 0)
+
+    return Sum
+}
+
+console.log(getPrimeProduct())
+
+
